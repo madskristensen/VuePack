@@ -2,8 +2,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/y20hsx8sjiaijld5?svg=true)](https://ci.appveyor.com/project/madskristensen/vuepack)
 
-<!-- Update the VS Gallery link after you upload the VSIX-->
-Download this extension from the [VS Gallery](https://visualstudiogallery.msdn.microsoft.com/[GuidFromGallery])
+Download this extension from the [VS Gallery](https://visualstudiogallery.msdn.microsoft.com/30fd019a-7b90-4f75-bb54-b8f49f18fbe1)
 or get the [CI build](http://vsixgallery.com/extension/6ac8e91a-ade2-4e25-a8e1-a779dd6aeca3/).
 
 ---------------------------------------

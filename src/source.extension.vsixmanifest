@@ -8,6 +8,7 @@
         <License>Resources\LICENSE</License>
         <Icon>Resources\icon.png</Icon>
         <PreviewImage>Resources\Preview.png</PreviewImage>
+        <Tags>vue.js, snippets, javascript</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
