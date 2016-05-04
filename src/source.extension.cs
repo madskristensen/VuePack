@@ -8,10 +8,10 @@ namespace VuePack
     static class Vsix
     {
         public const string Id = "6ac8e91a-ade2-4e25-a8e1-a779dd6aeca3";
-        public const string Name = "Vue Pack";
+        public const string Name = "Vue.js Pack";
         public const string Description = "Contains HTML Intellisense and code snippets for the Vue.js JavaScript library";
         public const string Language = "en-US";
-        public const string Version = "1.0";
+        public const string Version = "1.0.1";
         public const string Author = "Mads Kristensen";
         public const string Tags = "";
     }

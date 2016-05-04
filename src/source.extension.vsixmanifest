@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="6ac8e91a-ade2-4e25-a8e1-a779dd6aeca3" Version="1.0" Language="en-US" Publisher="Mads Kristensen" />
-        <DisplayName>Vue Pack</DisplayName>
+        <Identity Id="6ac8e91a-ade2-4e25-a8e1-a779dd6aeca3" Version="1.0.1" Language="en-US" Publisher="Mads Kristensen" />
+        <DisplayName>Vue.js Pack</DisplayName>
         <Description xml:space="preserve">Contains HTML Intellisense and code snippets for the Vue.js JavaScript library</Description>
+        <MoreInfo>https://github.com/madskristensen/VuePack</MoreInfo>
+        <License>Resources\LICENSE</License>
         <Icon>Resources\icon.png</Icon>
         <PreviewImage>Resources\Preview.png</PreviewImage>
     </Metadata>
