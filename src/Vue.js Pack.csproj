@@ -55,9 +55,10 @@
     <Content Include="JavaScript\Snippets\VuePack\vue.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <None Include="..\LICENSE">
+    <Content Include="..\LICENSE">
       <Link>Resources\LICENSE</Link>
-    </None>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="packages.config" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
