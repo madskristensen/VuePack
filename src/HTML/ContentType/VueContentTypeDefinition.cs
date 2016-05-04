@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel.Composition;
 using Microsoft.VisualStudio.Utilities;
 
-namespace MadsKristensen.EditorExtensions.IcedCoffeeScript
+namespace VuePack
 {
     public class VueContentTypeDefinition
     {
-        public const string VueContentType = "Vue";
+        private const string VueContentType = "Vue";
+        private const string VueFileExtension = ".vue";
 
         [Export(typeof(ContentTypeDefinition))]
         [Name(VueContentType)]
@@ -14,7 +15,7 @@ namespace MadsKristensen.EditorExtensions.IcedCoffeeScript
 
         [Export(typeof(FileExtensionToContentTypeDefinition))]
         [ContentType(VueContentType)]
-        [FileExtension(".vue")]
-        public FileExtensionToContentTypeDefinition VueFileExtension { get; set; }
+        [FileExtension(VueFileExtension)]
+        public FileExtensionToContentTypeDefinition VueFileExtensionDefinition { get; set; }
     }
 }

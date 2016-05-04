@@ -2,7 +2,7 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="6ac8e91a-ade2-4e25-a8e1-a779dd6aeca3" Version="1.0" Language="en-US" Publisher="Mads Kristensen" />
-        <DisplayName>Vue.js Pack</DisplayName>
+        <DisplayName>Vue Pack</DisplayName>
         <Description xml:space="preserve">Contains HTML Intellisense and code snippets for the Vue.js JavaScript library</Description>
         <Icon>Resources\icon.png</Icon>
         <PreviewImage>Resources\Preview.png</PreviewImage>
@@ -15,6 +15,7 @@
     </Dependencies>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
-        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="ContentType\icons.pkgdef" />
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="HTML\ContentType\icons.pkgdef" />
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="JavaScript\Snippets\snippets.pkgdef" />
     </Assets>
 </PackageManifest>

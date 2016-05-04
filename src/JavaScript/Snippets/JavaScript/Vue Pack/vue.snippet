@@ -1,0 +1,26 @@
+﻿<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <Header>
+        <Title>vue</Title>
+        <Shortcut>vue</Shortcut>
+        <Description>vue instance</Description>
+        <Author>Mads Kristensen</Author>
+        <SnippetTypes>
+            <SnippetType>Expansion</SnippetType>
+        </SnippetTypes>
+    </Header>
+    <Snippet>
+        <Declarations>
+            <Literal>
+                <ID>selector</ID>
+                <Default>#app</Default>
+            </Literal>
+        </Declarations>
+        <Code Language="JavaScript">
+            <![CDATA[var vm = new Vue({
+
+    el: "$selector$"
+
+})$end$]]>
+        </Code>
+    </Snippet>
+</CodeSnippet>

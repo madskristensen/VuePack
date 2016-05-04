@@ -14,10 +14,23 @@ See the [changelog](CHANGELOG.md) for changes and roadmap.
 
 ## Features
 
-- coming soon
+- **.vue** files are mapped to open in the HTML editor
+- HTML Intellisense for directives
+- File icon for **.vue** files
+- JavaScript snippets
 
-### Intellisense
-coming soon...
+### Directives Intellisense
+Built in directives are shown in Intellisense to make it easier
+to write an to avoid typos.
+
+![HTML Intellisense](art/html-intellisense.png)
+![HTML Intellisense partial](art/html-intellisense-partial.png)
+
+### File icon
+Solution Explorer correctly displays a file icon for .vue
+files.
+
+![File icon](art/file-icon.png)
 
 ## Contribute
 Check out the [contribution guidelines](CONTRIBUTING.md)

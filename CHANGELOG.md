@@ -2,7 +2,7 @@
 
 - [x] Map .vue files to the HTML editor
 - [x] File icon for .vue files
-- [ ] Intellisense for Vue directives
+- [x] Intellisense for Vue directives
 - [ ] Vue specific JavaScript snippets
 
 Features that have a checkmark are complete and available for
