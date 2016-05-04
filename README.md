@@ -8,7 +8,9 @@ or get the [CI build](http://vsixgallery.com/extension/6ac8e91a-ade2-4e25-a8e1-a
 
 ---------------------------------------
 
-Contains HTML Intellisense and code snippets for the Vue.js JavaScript library
+Contains HTML Intellisense and code snippets for the 
+[Vue.js](http://vuejs.org)
+JavaScript library
 
 See the [changelog](CHANGELOG.md) for changes and roadmap.
 
@@ -31,6 +33,53 @@ Solution Explorer correctly displays a file icon for .vue
 files.
 
 ![File icon](art/file-icon.png)
+
+### JavaScript snippets
+A few handy snippets are available to speed up boilerplating
+of vew models, filters and directives.
+
+#### vue (view model)
+
+```javascript
+var vm = new Vue({
+
+    el: "#app"
+
+})
+```
+
+#### vued (directive)
+
+```javascript
+Vue.directive('my-directive', {
+
+    bind: function () {
+        // content
+    },
+
+    update: function (value) {
+        // content
+    },
+
+    unbind: function () {
+        // content
+    }
+})
+```
+
+#### vuef (filter)
+
+```javascript
+Vue.filter('my-filter', function (value) {
+
+    $end$
+
+})
+```
+
+Here's what it looks like in the Code Snippets Manager.
+
+![Snippets](art/snippets.png)
 
 ## Contribute
 Check out the [contribution guidelines](CONTRIBUTING.md)

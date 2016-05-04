@@ -1,9 +1,6 @@
 # Roadmap
 
-- [x] Map .vue files to the HTML editor
-- [x] File icon for .vue files
-- [x] Intellisense for Vue directives
-- [ ] Vue specific JavaScript snippets
+- [ ] Nothing yet...
 
 Features that have a checkmark are complete and available for
 download in the
@@ -18,4 +15,7 @@ on the official Visual Studio extension gallery.
 
 **2016-05-04**
 
-- not shipped yet
+- [x] Map .vue files to the HTML editor
+- [x] File icon for .vue files
+- [x] Intellisense for Vue directives
+- [x] Vue specific JavaScript snippets

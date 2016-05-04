@@ -1,0 +1,35 @@
+﻿<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <Header>
+        <Title>vued</Title>
+        <Shortcut>vued</Shortcut>
+        <Description>vue directive</Description>
+        <Author>Mads Kristensen</Author>
+        <SnippetTypes>
+            <SnippetType>Expansion</SnippetType>
+        </SnippetTypes>
+    </Header>
+    <Snippet>
+        <Declarations>
+            <Literal>
+                <ID>name</ID>
+                <Default>my-directive</Default>
+            </Literal>
+        </Declarations>
+        <Code Language="JavaScript">
+            <![CDATA[Vue.directive('$name$', {
+
+    bind: function () {
+        // content
+    },
+
+    update: function (value) {
+        // content
+    },
+
+    unbind: function () {
+        // content
+    }
+})$end$]]>
+        </Code>
+    </Snippet>
+</CodeSnippet>
