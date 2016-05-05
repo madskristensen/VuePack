@@ -33,7 +33,7 @@ namespace VuePack
         public static ConcurrentDictionary<string, string[]> Attributes => new ConcurrentDictionary<string, string[]>();
 
         public static Regex ElementRegex => new Regex("Vue\\.(elementDirective|component)\\(('|\")(?<name>[^'\"]+)\\2", RegexOptions.Compiled);
-        public static Regex EttributeRegex => new Regex("Vue\\.(directive)\\(('|\")(?<name>[^'\"]+)\\2", RegexOptions.Compiled);
+        public static Regex AttributeRegex => new Regex("Vue\\.(directive)\\(('|\")(?<name>[^'\"]+)\\2", RegexOptions.Compiled);
 
         public void VsTextViewCreated(IVsTextView textViewAdapter)
         {
@@ -100,9 +100,23 @@ namespace VuePack
                 Elements[file] = elementMatches.Select(m => m.Groups["name"].Value).ToArray();
 
                 // Attributes
-                var attributeMatches = EttributeRegex.Matches(content).Cast<Match>();
+                var attributeMatches = AttributeRegex.Matches(content).Cast<Match>();
                 Attributes[file] = attributeMatches.Select(m => m.Groups["name"].Value).ToArray();
             }
+        }
+
+        public static List<string> GetValues(ConcurrentDictionary<string, string[]> cache)
+        {
+            var names = new List<string>();
+
+            foreach (var file in cache.Keys)
+                foreach (var attr in cache[file])
+                {
+                    if (!names.Contains(attr))
+                        names.Add(attr);
+                }
+
+            return names;
         }
 
         private static List<string> GetFiles(string path, string pattern)

@@ -18,15 +18,8 @@ namespace VuePack
         public override IList<HtmlCompletion> GetEntries(HtmlCompletionContext context)
         {
             string text = context.Document.TextBuffer.CurrentSnapshot.GetText();
-            var names = new List<string>();
+            var names = HtmlCreationListener.GetValues(HtmlCreationListener.Elements);
             var list = new List<HtmlCompletion>();
-
-            foreach (var file in HtmlCreationListener.Elements.Keys)
-                foreach (var elm in HtmlCreationListener.Elements[file])
-                {
-                    if (!names.Contains(elm))
-                        names.Add(elm);
-                }
 
             foreach (Match match in HtmlCreationListener.ElementRegex.Matches(text))
             {
