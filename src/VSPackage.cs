@@ -22,7 +22,7 @@ namespace VuePack
             var dte = GetService(typeof(DTE)) as DTE2;
 
             _events = dte.Events.SolutionEvents;
-            _events.AfterClosing += delegate { HtmlCreationListener.Clear(); };
+            _events.AfterClosing += delegate { DirectivesCache.Clear(); };
 
             base.Initialize();
         }

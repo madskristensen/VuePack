@@ -18,10 +18,10 @@ namespace VuePack
         public override IList<HtmlCompletion> GetEntries(HtmlCompletionContext context)
         {
             string text = context.Document.TextBuffer.CurrentSnapshot.GetText();
-            var names = HtmlCreationListener.GetValues(HtmlCreationListener.Elements);
+            var names = DirectivesCache.GetValues(DirectiveType.Element);
             var list = new List<HtmlCompletion>();
 
-            foreach (Match match in HtmlCreationListener.ElementRegex.Matches(text))
+            foreach (Match match in DirectivesCache.ElementRegex.Matches(text))
             {
                 var name = match.Groups["name"].Value;
                 if (!names.Contains(name))

@@ -19,9 +19,11 @@ namespace VuePack
     [Export(typeof(IVsTextViewCreationListener))]
     [ContentType("htmlx")]
     [TextViewRole(PredefinedTextViewRoles.PrimaryDocument)]
-    class HtmlCreationListener : IVsTextViewCreationListener
+    class DirectivesCache : IVsTextViewCreationListener
     {
         private static bool _hasRun, _isProcessing;
+        private static ConcurrentDictionary<string, string[]> _elements = new ConcurrentDictionary<string, string[]>();
+        private static ConcurrentDictionary<string, string[]> _attributes = new ConcurrentDictionary<string, string[]>();
 
         [Import]
         public IVsEditorAdaptersFactoryService EditorAdaptersFactoryService { get; set; }
@@ -29,15 +31,13 @@ namespace VuePack
         [Import]
         public ITextDocumentFactoryService TextDocumentFactoryService { get; set; }
 
-        public static ConcurrentDictionary<string, string[]> Elements => new ConcurrentDictionary<string, string[]>();
-        public static ConcurrentDictionary<string, string[]> Attributes => new ConcurrentDictionary<string, string[]>();
+        public static Regex ElementRegex { get; } = new Regex("Vue\\.(elementDirective|component)\\(('|\")(?<name>[^'\"]+)\\2", RegexOptions.Compiled);
 
-        public static Regex ElementRegex => new Regex("Vue\\.(elementDirective|component)\\(('|\")(?<name>[^'\"]+)\\2", RegexOptions.Compiled);
-        public static Regex AttributeRegex => new Regex("Vue\\.(directive)\\(('|\")(?<name>[^'\"]+)\\2", RegexOptions.Compiled);
+        public static Regex AttributeRegex { get; } = new Regex("Vue\\.(directive)\\(('|\")(?<name>[^'\"]+)\\2", RegexOptions.Compiled);
 
         public void VsTextViewCreated(IVsTextView textViewAdapter)
         {
-            if (_hasRun)
+            if (_hasRun || _isProcessing)
                 return;
 
             var textView = EditorAdaptersFactoryService.GetWpfTextView(textViewAdapter);
@@ -48,12 +48,14 @@ namespace VuePack
             {
                 if (Path.IsPathRooted(doc.FilePath) && File.Exists(doc.FilePath))
                 {
+                    _isProcessing = true;
                     var dte = (DTE2)Package.GetGlobalService(typeof(DTE));
                     var item = dte.Solution?.FindProjectItem(doc.FilePath);
 
                     System.Threading.Tasks.Task.Run(() =>
                     {
                         EnsureInitialized(item);
+                        _hasRun = _isProcessing = false;
                     });
                 }
             }
@@ -62,13 +64,13 @@ namespace VuePack
         public static void Clear()
         {
             _hasRun = false;
-            Elements.Clear();
-            Attributes.Clear();
+            _elements.Clear();
+            _attributes.Clear();
         }
 
         private void EnsureInitialized(ProjectItem item)
         {
-            if (_hasRun || _isProcessing || item == null || item.ContainingProject == null)
+            if (item == null || item.ContainingProject == null)
                 return;
 
             try
@@ -77,11 +79,11 @@ namespace VuePack
 
                 var vueFiles = GetFiles(folder, "*.vue");
                 var jsFiles = GetFiles(folder, "*.js");
-                var allFiles = vueFiles.Union(jsFiles).Where(f => !f.Contains(".min."));
+                var allFiles = vueFiles
+                                .Union(jsFiles)
+                                .Where(f => !f.Contains(".min.") && !f.EndsWith(".intellisense.js") && !f.EndsWith("-vsdoc.js"));
 
                 ProcessFile(allFiles.ToArray());
-
-                _hasRun = _isProcessing = true;
             }
             catch (Exception)
             {
@@ -97,17 +99,18 @@ namespace VuePack
 
                 // Elements
                 var elementMatches = ElementRegex.Matches(content).Cast<Match>();
-                Elements[file] = elementMatches.Select(m => m.Groups["name"].Value).ToArray();
+                _elements[file] = elementMatches.Select(m => m.Groups["name"].Value).ToArray();
 
                 // Attributes
                 var attributeMatches = AttributeRegex.Matches(content).Cast<Match>();
-                Attributes[file] = attributeMatches.Select(m => m.Groups["name"].Value).ToArray();
+                _attributes[file] = attributeMatches.Select(m => m.Groups["name"].Value).ToArray();
             }
         }
 
-        public static List<string> GetValues(ConcurrentDictionary<string, string[]> cache)
+        public static List<string> GetValues(DirectiveType type)
         {
             var names = new List<string>();
+            var cache = type == DirectiveType.Element ? _elements : _attributes;
 
             foreach (var file in cache.Keys)
                 foreach (var attr in cache[file])
@@ -136,5 +139,11 @@ namespace VuePack
 
             return files;
         }
+    }
+
+    public enum DirectiveType
+    {
+        Element,
+        Attribute
     }
 }

@@ -50,7 +50,7 @@
     <Compile Include="HTML\Completion\BaseCompletion.cs" />
     <Compile Include="HTML\Completion\ElementCompletion.cs" />
     <Compile Include="HTML\Completion\AttributeCompletion.cs" />
-    <Compile Include="HTML\HtmlCreationListener.cs" />
+    <Compile Include="HTML\DirectivesCache.cs" />
     <Compile Include="HTML\VueCreationListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="source.extension.cs">

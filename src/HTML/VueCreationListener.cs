@@ -46,7 +46,7 @@ namespace VuePack
             {
                 Task.Run(() =>
                 {
-                    HtmlCreationListener.ProcessFile(e.FilePath);
+                    DirectivesCache.ProcessFile(e.FilePath);
                 });
             }
         }
