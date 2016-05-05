@@ -10,8 +10,6 @@ namespace VuePack
     [ContentType("htmlx")]
     class ElementDirectiveCompletion : BaseCompletion
     {
-        private static Regex _regex = new Regex("Vue\\.(elementDirective|component)\\(('|\")(?<name>[^'\"]+)\\2", RegexOptions.Compiled);
-
         public override string CompletionType
         {
             get { return CompletionTypes.Children; }
@@ -20,11 +18,26 @@ namespace VuePack
         public override IList<HtmlCompletion> GetEntries(HtmlCompletionContext context)
         {
             string text = context.Document.TextBuffer.CurrentSnapshot.GetText();
+            var names = new List<string>();
             var list = new List<HtmlCompletion>();
 
-            foreach (Match match in _regex.Matches(text))
+            foreach (var file in HtmlCreationListener.Elements.Keys)
+                foreach (var elm in HtmlCreationListener.Elements[file])
+                {
+                    if (!names.Contains(elm))
+                        names.Add(elm);
+                }
+
+            foreach (Match match in HtmlCreationListener.ElementRegex.Matches(text))
             {
-                var item = CreateItem(match.Groups["name"].Value, "Custom component/directive", context.Session);
+                var name = match.Groups["name"].Value;
+                if (!names.Contains(name))
+                    names.Add(name);
+            }
+
+            foreach (string name in names)
+            {
+                var item = CreateItem(name, "Custom component/directive", context.Session);
                 list.Add(item);
             }
 

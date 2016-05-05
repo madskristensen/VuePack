@@ -7,7 +7,7 @@ or get the [CI build](http://vsixgallery.com/extension/6ac8e91a-ade2-4e25-a8e1-a
 
 ---------------------------------------
 
-Contains HTML Intellisense and code snippets for the 
+Contains HTML Intellisense and code snippets for the
 [Vue.js](http://vuejs.org)
 JavaScript library
 
@@ -16,13 +16,17 @@ See the [changelog](CHANGELOG.md) for changes and roadmap.
 ## Features
 
 - **.vue** files are mapped to open in the HTML editor
-- HTML Intellisense for directives
+- HTML Intellisense for built-in directives
+- HTML Intellisense for custom directives and components
 - File icon for **.vue** files
 - JavaScript snippets
 
 ### Directives Intellisense
 Built in directives are shown in Intellisense to make it easier
 to write an to avoid typos.
+
+Any directive or component defined in any .vue or .js file in
+the project will be show up in Intellisense.
 
 #### Built in directives
 ![HTML Intellisense](art/html-intellisense.png)
