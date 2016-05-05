@@ -42,6 +42,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="HTML\Completion\AttributeDirectiveCompletion.cs" />
+    <Compile Include="HTML\Completion\ElementDirectiveCompletion.cs" />
     <Compile Include="HTML\ContentType\VueContentTypeDefinition.cs" />
     <Compile Include="HTML\Completion\BaseCompletion.cs" />
     <Compile Include="HTML\Completion\ElementCompletion.cs" />

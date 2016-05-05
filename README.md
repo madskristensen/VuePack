@@ -24,8 +24,17 @@ See the [changelog](CHANGELOG.md) for changes and roadmap.
 Built in directives are shown in Intellisense to make it easier
 to write an to avoid typos.
 
+#### Built in directives
 ![HTML Intellisense](art/html-intellisense.png)
+
+#### Special elements
 ![HTML Intellisense partial](art/html-intellisense-partial.png)
+
+#### Custom components/elementDirectives
+![HTML Intellisense components](art/html-intellisense-component.png)
+
+#### Custom directives
+![HTML Intellisense directives](art/html-intellisense-directives.png)
 
 ### File icon
 Solution Explorer correctly displays a file icon for .vue

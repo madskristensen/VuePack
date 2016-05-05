@@ -19,3 +19,6 @@ on the official Visual Studio extension gallery.
 - [x] File icon for .vue files
 - [x] Intellisense for Vue directives
 - [x] Vue specific JavaScript snippets
+- [x] Intellisense for custom components
+- [x] Intellisense for custom elementDirectives
+- [x] Intellisense for custom directives

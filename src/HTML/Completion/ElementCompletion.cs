@@ -18,7 +18,8 @@ namespace VuePack
         {
             var list = new List<HtmlCompletion>
             {
-                CreateItem("partial", "<partial> tags serve as outlets for registered partials. Partial contents are also compiled by Vue when inserted. The <partial> element itself will be replaced. It requires a name attribute to be provided.", context.Session)
+                CreateItem("partial", "<partial> tags serve as outlets for registered partials. Partial contents are also compiled by Vue when inserted. The <partial> element itself will be replaced. It requires a name attribute to be provided.", context.Session),
+                CreateItem("component", "Alternative syntax for invoking components. Primarily used for dynamic components with the \"is\" attribute", context.Session),
             };
 
             return list;
