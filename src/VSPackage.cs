@@ -1,6 +1,5 @@
 using System;
 using System.Runtime.InteropServices;
-using System.Windows.Threading;
 using EnvDTE;
 using EnvDTE80;
 using Microsoft.VisualStudio.Shell;
@@ -13,7 +12,7 @@ namespace VuePack
     [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
     [Guid("68fc93ea-cc77-4459-a612-15d2a3ba4c86")]
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    public sealed class WebLinterPackage : Package
+    public sealed class VuePackage : Package
     {
         private SolutionEvents _events;
 

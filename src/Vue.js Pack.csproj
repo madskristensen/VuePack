@@ -222,7 +222,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HTML\ContentType\icons.pkgdef">
+    <Content Include="HTML\ContentType\registry.pkgdef">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="JavaScript\Snippets\snippets.pkgdef">

@@ -1,5 +1,8 @@
+
 # Roadmap
 
+- [x] JavaScript language support in .vue files
+- [ ] Vue logo as .vue file icon in Solution Explorer
 - [ ] Item templates
 
 Features that have a checkmark are complete and available for
