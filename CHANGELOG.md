@@ -1,8 +1,5 @@
-
 # Roadmap
 
-- [x] JavaScript language support in .vue files
-- [x] Vue logo as .vue file icon in Solution Explorer
 - [ ] Item templates
 
 Features that have a checkmark are complete and available for
@@ -13,6 +10,13 @@ download in the
 
 These are the changes to each version that has been released
 on the official Visual Studio extension gallery.
+
+## 1.1
+
+**2016-05-25**
+
+- [x] JavaScript language support in .vue files
+- [x] Vue logo as .vue file icon in Solution Explorer
 
 ## 1.0
 
