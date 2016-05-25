@@ -52,6 +52,9 @@
     <Compile Include="HTML\Completion\AttributeCompletion.cs" />
     <Compile Include="HTML\DirectivesCache.cs" />
     <Compile Include="HTML\VueCreationListener.cs" />
+    <Compile Include="Images.imagemanifest.cs">
+      <DependentUpon>Images.imagemanifest</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="source.extension.cs">
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
@@ -59,6 +62,7 @@
     <Compile Include="VSPackage.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\VueFile.png" />
     <Content Include="JavaScript\Snippets\VuePack\vue.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -70,6 +74,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="JavaScript\Snippets\VuePack\vuef.snippet">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Images.imagemanifest">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <None Include="packages.config" />
@@ -111,6 +118,11 @@
       <Private>True</Private>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.14.2.25123\lib\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.Language.Intellisense, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.VisualStudio.Language.Intellisense.14.2.25123\lib\net45\Microsoft.VisualStudio.Language.Intellisense.dll</HintPath>
       <Private>False</Private>
@@ -150,6 +162,26 @@
       <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.7.10.6071\lib\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
       <Private>True</Private>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.10.0.10.0.30319\lib\Microsoft.VisualStudio.Shell.Interop.10.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.11.0.11.0.61030\lib\Microsoft.VisualStudio.Shell.Interop.11.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.12.0.12.0.30110\lib\Microsoft.VisualStudio.Shell.Interop.12.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.14.2.25123\lib\Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.8.0.8.0.50727\lib\Microsoft.VisualStudio.Shell.Interop.8.0.dll</HintPath>
@@ -222,16 +254,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HTML\ContentType\registry.pkgdef">
+    <Content Include="registry.pkgdef">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="JavaScript\Snippets\snippets.pkgdef">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Resources\icon.png">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="HTML\Completion\icon.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Resources\Preview.png">
