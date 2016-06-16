@@ -11,6 +11,12 @@ download in the
 These are the changes to each version that has been released
 on the official Visual Studio extension gallery.
 
+## 1.2
+
+**2016-06-16**
+
+- [x] Support for the Vue.js 2.0 &lt;render&gt; element
+
 ## 1.1
 
 **2016-05-25**
