@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using EnvDTE;
-using EnvDTE80; 
 
 namespace VuePack
 {
